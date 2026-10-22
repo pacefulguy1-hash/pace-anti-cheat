@@ -1,0 +1,13 @@
+title: PACE Anti-Cheat
+description: PACE Windows security companion beta.
+url: "https://pacefulguy1-hash.github.io"
+baseurl: "/pace-anti-cheat"
+permalink: pretty
+exclude:
+  - app/
+  - installer/
+  - .github/
+  - build_windows.bat
+  - START_HERE_TR.md
+  - RELEASE_NOTES.md
+  - PRIVACY.md
