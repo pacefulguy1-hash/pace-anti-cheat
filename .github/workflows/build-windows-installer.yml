@@ -1,1 +1,76 @@
+name: Build PACE Windows Installer
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    name: Build Windows app and setup
+    runs-on: windows-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - name: Install PyInstaller
+        run: python -m pip install --upgrade pip pyinstaller
+
+      - name: Build PACE.exe
+        shell: pwsh
+        run: |
+          pyinstaller --noconfirm --clean --onefile --windowed --name PACE --icon app/assets/pace.ico app/pace_app.py
+          if (!(Test-Path 'dist/PACE.exe')) { throw 'PyInstaller did not create dist/PACE.exe' }
+
+      - name: Install Inno Setup
+        shell: pwsh
+        run: |
+          $iscc = 'C:\Program Files (x86)\Inno Setup 6\ISCC.exe'
+          if (!(Test-Path $iscc)) {
+            choco install innosetup --yes --no-progress
+          }
+          if (!(Test-Path $iscc)) { throw 'Inno Setup compiler was not found after installation.' }
+
+      - name: Build PACE setup installer
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force -Path releases | Out-Null
+          & 'C:\Program Files (x86)\Inno Setup 6\ISCC.exe' 'installer/PACE-Setup.iss'
+          if (!(Test-Path 'releases/PACE-Setup-0.2.0-beta.exe')) { throw 'Setup installer was not created.' }
+          $hash = (Get-FileHash 'releases/PACE-Setup-0.2.0-beta.exe' -Algorithm SHA256).Hash.ToLower()
+          "$hash  PACE-Setup-0.2.0-beta.exe" | Out-File -FilePath 'releases/SHA256SUMS.txt' -Encoding ascii
+
+      - name: Upload test installer artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: PACE-Setup-0.2.0-beta-Windows-x64
+          path: |
+            releases/PACE-Setup-0.2.0-beta.exe
+            releases/SHA256SUMS.txt
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Create or update draft beta release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v0.2.0-beta
+          name: PACE Anti-Cheat 0.2 Beta
+          body_path: RELEASE_NOTES.md
+          draft: true
+          prerelease: true
+          overwrite_files: true
+          files: |
+            releases/PACE-Setup-0.2.0-beta.exe
+            releases/SHA256SUMS.txt
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
