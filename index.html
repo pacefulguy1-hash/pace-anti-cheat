@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080d17">
+  <meta name="description" content="PACE is a lightweight Windows security companion for checking Microsoft Defender status and requesting malware scans.">
+  <title>PACE Anti-Cheat — Windows Security Companion</title>
+  <link rel="icon" type="image/svg+xml" href="assets/pace-mark.svg">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="PACE home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 48 48"><path d="M24 3 41 10v13c0 10-7 17-17 22C14 40 7 33 7 23V10Z" fill="currentColor"/><path d="M24 10 34 14v9c0 7-4 12-10 16-6-4-10-9-10-16v-9Z" fill="#101827"/><path d="m18 23 4 4 8-9" fill="none" stroke="#85f7cd" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+      <span class="brand-word">PACE<span class="brand-dot">.</span><small>ANTI-CHEAT · PC SECURITY</small></span>
+    </a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="#features" data-i18n="navFeatures">Features</a>
+      <a href="#how-it-works" data-i18n="navHow">How it works</a>
+      <a href="#download" data-i18n="navDownload">Download</a>
+    </nav>
+    <div class="header-actions">
+      <button id="settings-toggle" class="settings-button" type="button" aria-expanded="false" aria-controls="settings-panel"><span class="settings-symbol" aria-hidden="true">⚙</span><span data-i18n="settings">Settings</span></button>
+      <a class="button button-small button-primary" href="#download" data-i18n="getApp">Get the app</a>
+      <div id="settings-panel" class="settings-panel" hidden>
+        <label for="language-select" data-i18n="languageLabel">Language</label>
+        <select id="language-select" aria-label="Language">
+          <option value="en">English</option>
+          <option value="tr">Türkçe</option>
+          <option value="de">Deutsch</option>
+          <option value="es">Español</option>
+          <option value="fr">Français</option>
+        </select>
+        <label for="theme-select" data-i18n="themeLabel">Theme</label>
+        <select id="theme-select" aria-label="Theme">
+          <option value="dark" data-i18n="darkTheme">Dark</option>
+          <option value="light" data-i18n="lightTheme">Light</option>
+          <option value="system" data-i18n="systemTheme">System</option>
+        </select>
+        <p class="settings-note" data-i18n="settingsNote">Your choices are saved in this browser.</p>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero section-wrap">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="eyebrow-dot"></span><span data-i18n="eyebrow">WINDOWS SECURITY · BETA 0.2</span></div>
+        <h1 data-i18n="heroTitle">A clearer view of your PC’s security.</h1>
+        <p class="hero-lead" data-i18n="heroText">PACE is a lightweight Windows companion that checks Microsoft Defender status and helps you start a malware scan from one place.</p>
+        <div class="hero-actions">
+          <a class="button button-primary button-large" href="#download"><span data-i18n="downloadWindows">Download for Windows</span><span aria-hidden="true">↗</span></a>
+          <a class="button button-secondary button-large" href="#how-it-works" data-i18n="seeHow">See how it works</a>
+        </div>
+        <p class="hero-micro"><span class="mini-check">✓</span><span data-i18n="heroFoot">Windows app · Clear limitations · No fake “100% protected” claims</span></p>
+      </div>
+      <div class="hero-art" aria-label="Preview of the PACE Windows application">
+        <div class="art-halo"></div>
+        <div class="orbit orbit-outer"></div><div class="orbit orbit-inner"></div>
+        <div class="app-window">
+          <div class="window-top"><div class="window-brand"><span class="mini-mark">P</span> PACE</div><div class="window-controls"><i></i><i></i><i></i></div></div>
+          <div class="window-content">
+            <div class="window-sidebar"><span class="sidebar-active">◈</span><span>▦</span><span>⌁</span><span>⚙</span></div>
+            <div class="window-main">
+              <div class="mock-eyebrow" data-i18n="mockEyebrow">SECURITY OVERVIEW</div>
+              <div class="mock-head" data-i18n="mockTitle">Your protection status</div>
+              <div class="mock-status"><div class="mock-shield"><svg viewBox="0 0 60 68"><path d="M30 3 54 13v18c0 15-10 26-24 34C16 57 6 46 6 31V13Z" fill="#173d38" stroke="#4ee3b0" stroke-width="2"/><path d="m19 33 8 8 15-18" fill="none" stroke="#7df5cb" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><strong data-i18n="mockDefender">Microsoft Defender</strong><p data-i18n="mockConnect">Status is checked on your PC</p><span class="mock-pill" data-i18n="mockDemo">ILLUSTRATIVE PREVIEW</span></div></div>
+              <div class="mock-lines"><div><span data-i18n="mockRealtime">Real-time protection</span><b data-i18n="mockLive">Check in app</b></div><div><span data-i18n="mockUpdates">Security intelligence</span><b data-i18n="mockCurrent">Check in app</b></div></div>
+              <div class="mock-scan"><span class="scan-icon">⌕</span><span data-i18n="mockScan">Request a quick scan</span><span class="scan-arrow">→</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="floating-chip chip-top"><span class="chip-led"></span><span data-i18n="chipLocal">Local status check</span></div>
+        <div class="floating-chip chip-bottom"><span class="chip-shield">✓</span><span data-i18n="chipHonest">Honest beta status</span></div>
+      </div>
+    </section>
+
+    <section class="notice-wrap section-wrap" aria-label="Beta limitation">
+      <div class="notice-icon">!</div><div class="notice-copy"><strong data-i18n="noticeTitle">New · Version 0.2 Beta</strong><p data-i18n="noticeText">Advanced threat detection is not available in this beta. PACE does not have its own malware-detection engine yet; scan requests use Microsoft Defender when available.</p></div><a href="#limitations" class="notice-link" data-i18n="learnLimits">Read limitations →</a>
+    </section>
+
+    <section id="features" class="section-wrap feature-section">
+      <div class="section-heading"><div class="eyebrow" data-i18n="featuresKicker">BUILT FOR CLARITY</div><h2 data-i18n="featuresTitle">The essentials, without pretending.</h2><p data-i18n="featuresText">PACE provides a clean place to view protection status and launch supported Windows security checks.</p></div>
+      <div class="feature-grid">
+        <article class="feature-card"><div class="feature-icon blue">◉</div><h3 data-i18n="featureStatusTitle">Defender status</h3><p data-i18n="featureStatusText">Check whether Microsoft Defender reports antivirus and real-time protection as enabled.</p><span class="feature-label" data-i18n="featureLabelAvailable">Available in the Windows app</span></article>
+        <article class="feature-card"><div class="feature-icon green">⌕</div><h3 data-i18n="featureScanTitle">Quick and full scans</h3><p data-i18n="featureScanText">Request a scan using the built-in Microsoft Defender engine. Windows may ask for permission.</p><span class="feature-label" data-i18n="featureLabelDefender">Uses Microsoft Defender</span></article>
+        <article class="feature-card"><div class="feature-icon violet">☷</div><h3 data-i18n="featureHistoryTitle">Clear security information</h3><p data-i18n="featureHistoryText">See what this beta can check, what it cannot check, and where to review Defender results.</p><span class="feature-label" data-i18n="featureLabelNoClaim">No invented scan results</span></article>
+      </div>
+    </section>
+
+    <section id="how-it-works" class="workflow-section">
+      <div class="section-wrap workflow-grid">
+        <div class="section-heading left-heading"><div class="eyebrow" data-i18n="howKicker">HOW IT WORKS</div><h2 data-i18n="howTitle">PACE works alongside Windows security.</h2><p data-i18n="howText">It is a companion interface, not a replacement for a full antivirus product.</p></div>
+        <div class="steps">
+          <div class="step"><span>01</span><div><h3 data-i18n="stepOneTitle">Open PACE on Windows</h3><p data-i18n="stepOneText">The app queries the local Microsoft Defender status through Windows PowerShell.</p></div></div>
+          <div class="step"><span>02</span><div><h3 data-i18n="stepTwoTitle">Request a scan</h3><p data-i18n="stepTwoText">Choose Quick Scan or Full Scan. Windows may display a User Account Control prompt.</p></div></div>
+          <div class="step"><span>03</span><div><h3 data-i18n="stepThreeTitle">Review the result in Windows Security</h3><p data-i18n="stepThreeText">Use Windows Security and Protection history for the authoritative scan and remediation status.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="limitations" class="section-wrap limits-section">
+      <div class="section-heading"><div class="eyebrow" data-i18n="limitsKicker">IMPORTANT TO KNOW</div><h2 data-i18n="limitsTitle">What Beta 0.2 does — and does not do.</h2></div>
+      <div class="limits-grid"><div class="limit-box good"><h3><span>✓</span><span data-i18n="doesTitle">This beta can</span></h3><ul><li data-i18n="doesOne">Read selected Microsoft Defender status fields.</li><li data-i18n="doesTwo">Request a Defender quick or full scan.</li><li data-i18n="doesThree">Open Windows Security for result review.</li></ul></div><div class="limit-box caution"><h3><span>!</span><span data-i18n="notTitle">This beta cannot</span></h3><ul><li data-i18n="notOne">Independently detect every virus or advanced threat.</li><li data-i18n="notTwo">Guarantee that a PC is clean or continuously protected.</li><li data-i18n="notThree">Replace Microsoft Defender or another trusted antivirus.</li></ul></div></div>
+    </section>
+
+    <section id="download" class="download-section section-wrap">
+      <div class="download-panel"><div class="download-orb"><svg viewBox="0 0 80 90"><path d="M40 4 70 17v23c0 21-12 34-30 46C22 74 10 61 10 40V17Z" fill="#143f39" stroke="#5ae5b6" stroke-width="2"/><path d="m26 43 10 10 20-24" fill="none" stroke="#8af7d0" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="download-copy"><div class="eyebrow" data-i18n="downloadKicker">PACE FOR WINDOWS</div><h2 data-i18n="downloadTitle">Your security overview, in one app.</h2><p data-i18n="downloadText">The installer will appear here after the Windows build is packaged, tested, and signed for distribution.</p><div class="download-meta"><span>Windows 10 / 11</span><span>·</span><span data-i18n="versionBeta">Version 0.2 Beta</span><span>·</span><span data-i18n="downloadStatus">Installer not published</span></div></div><div class="download-action"><button id="download-button" class="button button-primary button-large" type="button" disabled><span data-i18n="downloadUnavailable">Windows download coming soon</span></button><p data-i18n="downloadSmall">The download button will be activated when a verified installer is released.</p></div></div>
+      <p class="download-footnote" data-i18n="downloadFoot">PACE is currently in beta development. Do not download installers claiming to be official PACE builds from unofficial websites.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="section-wrap footer-inner"><a class="brand footer-brand" href="#top"><span class="brand-mark"><svg viewBox="0 0 48 48"><path d="M24 3 41 10v13c0 10-7 17-17 22C14 40 7 33 7 23V10Z" fill="currentColor"/><path d="m18 23 4 4 8-9" fill="none" stroke="#85f7cd" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="brand-word">PACE<span class="brand-dot">.</span><small>ANTI-CHEAT · PC SECURITY</small></span></a><p data-i18n="footerText">Built carefully. Tested honestly. Protection claims should be earned.</p><span class="footer-version">BETA 0.2</span></div></footer>
+</body>
+</html>
