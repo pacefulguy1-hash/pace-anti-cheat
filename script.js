@@ -51,8 +51,8 @@
   const downloadButton=document.getElementById('download-button');
   const downloadStatus=document.querySelector('[data-i18n=\"downloadStatus\"]');
   const downloadSmall=document.querySelector('[data-i18n=\"downloadSmall\"]');
-  const releaseApi='https://api.github.com/repos/pacefulguy1-hash/pace-anti-cheat/releases/tags/v0.3
-  .0-beta';
+  const releaseApi='https://api.github.com/repos/pacefulguy1-hash/pace-anti-cheat/releases/tags/v0.3  .0-beta';
+
   let officialInstallerUrl='';
   function updateDownloadUi(){
     const dict=translations[languageSelect.value]||translations.en;
