@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080d17">
+  <meta name="description" content="Paceful Shield is a Windows security companion that works alongside Microsoft Defender, monitors selected folders, and explains findings clearly.">
+  <title>Paceful Shield — Windows Security Companion</title>
+  <link rel="icon" type="image/png" href="assets/paceful-shield.png">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Paceful Shield home">
+      <img src="assets/paceful-shield.png" alt="" class="brand-logo">
+      <span class="brand-word">Paceful<span> Shield</span><small data-i18n="tagline">WINDOWS SECURITY COMPANION</small></span>
+    </a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="#features" data-i18n="navFeatures">Features</a>
+      <a href="#how-it-works" data-i18n="navHow">How it works</a>
+      <a href="#download" data-i18n="navDownload">Download</a>
+    </nav>
+    <div class="header-actions">
+      <label class="select-wrap"><span class="sr-only" data-i18n="languageLabel">Language</span>
+        <select id="language-select" aria-label="Language"><option value="en">English</option><option value="tr">Türkçe</option></select>
+      </label>
+      <button id="theme-toggle" class="icon-button" type="button" aria-label="Toggle theme" title="Toggle theme">☼</button>
+      <a class="button button-small button-primary" href="#download" data-i18n="getApp">Get the app</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero section-shell">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="pulse-dot"></span><span data-i18n="eyebrow">WINDOWS SECURITY · BETA 0.4</span></p>
+        <h1 data-i18n="heroTitle">A clearer view of your PC’s security.</h1>
+        <p class="hero-text" data-i18n="heroText">Paceful Shield works alongside Microsoft Defender, watches selected folders, and helps you understand security findings without pretending every warning is a confirmed virus.</p>
+        <div class="hero-actions">
+          <a id="hero-download" class="button button-primary" href="#download" data-i18n="downloadWindows">Download for Windows</a>
+          <a class="button button-ghost" href="#how-it-works" data-i18n="seeHow">See how it works</a>
+        </div>
+        <div class="hero-foot"><span>✓</span><span data-i18n="heroFoot">Windows app · Clear limitations · No fake “100% protected” claims</span></div>
+      </div>
+      <div class="hero-visual" aria-label="Paceful Shield app concept">
+        <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
+        <div class="logo-glow"></div>
+        <img class="hero-logo" src="assets/paceful-shield.png" alt="Paceful Shield shield logo">
+        <div class="floating-card card-top"><span class="status-dot"></span><span data-i18n="cardMonitoring">Folder monitoring</span><b data-i18n="active">ACTIVE</b></div>
+        <div class="floating-card card-bottom"><span class="mini-shield">✓</span><span><strong data-i18n="cardDefender">Microsoft Defender</strong><small data-i18n="cardTogether">Works alongside Windows security</small></span></div>
+      </div>
+    </section>
+
+    <section class="trust-strip section-shell" aria-label="Product principles">
+      <div><span class="trust-icon">⌂</span><span data-i18n="trustLocal">Local-first file review</span></div>
+      <div><span class="trust-icon">◈</span><span data-i18n="trustChoice">You decide what to remove</span></div>
+      <div><span class="trust-icon">◎</span><span data-i18n="trustHonest">Clear beta limitations</span></div>
+    </section>
+
+    <section id="features" class="content-section section-shell">
+      <div class="section-heading"><p class="eyebrow" data-i18n="featuresKicker">BUILT FOR CLARITY</p><h2 data-i18n="featuresTitle">Useful security tools. Honest status.</h2><p data-i18n="featuresText">Bring everyday security checks together while keeping Microsoft Defender enabled.</p></div>
+      <div class="feature-grid">
+        <article class="feature-card"><div class="feature-icon">◈</div><h3 data-i18n="featureStatusTitle">Defender status</h3><p data-i18n="featureStatusText">View antivirus, real-time protection, service, and security intelligence status reported by Windows.</p></article>
+        <article class="feature-card"><div class="feature-icon">⌕</div><h3 data-i18n="featureWatchTitle">Automatic folder review</h3><p data-i18n="featureWatchText">Watch selected locations and periodically inspect a limited number of files for suspicious patterns.</p></article>
+        <article class="feature-card"><div class="feature-icon">♧</div><h3 data-i18n="featureAlertsTitle">Desktop alerts</h3><p data-i18n="featureAlertsText">Receive a Windows notification when a new heuristic finding or a newly reported Defender threat is observed.</p></article>
+        <article class="feature-card"><div class="feature-icon">↗</div><h3 data-i18n="featureScanTitle">Defender scan controls</h3><p data-i18n="featureScanText">Request a quick or full Microsoft Defender scan and view available Defender threat-history entries.</p></article>
+        <article class="feature-card"><div class="feature-icon">⌫</div><h3 data-i18n="featureRemoveTitle">User-approved removal</h3><p data-i18n="featureRemoveText">Review the reason first. If you choose, move a flagged file to the Recycle Bin. Files are never removed automatically.</p></article>
+        <article class="feature-card"><div class="feature-icon">⚙</div><h3 data-i18n="featureExcludeTitle">Your exclusions</h3><p data-i18n="featureExcludeText">Exclude a file or folder from Paceful Shield's own review without changing Microsoft Defender exclusions.</p></article>
+        <article class="feature-card"><div class="feature-icon">◴</div><h3 data-i18n="featurePerformanceTitle">System performance</h3><p data-i18n="featurePerformanceText">View CPU, memory, disk usage, and the processes using the most memory.</p></article>
+        <article class="feature-card"><div class="feature-icon">⌁</div><h3 data-i18n="featureNetworkTitle">Network overview</h3><p data-i18n="featureNetworkText">Review active network connections locally. A connection is not marked malicious just because it is unfamiliar.</p></article>
+      </div>
+    </section>
+
+    <section id="how-it-works" class="how-section">
+      <div class="section-shell how-grid">
+        <div><p class="eyebrow" data-i18n="howKicker">HOW IT WORKS</p><h2 data-i18n="howTitle">A helpful companion, not a replacement antivirus.</h2><p data-i18n="howText">Paceful Shield uses Windows security information where available and applies a small set of local review rules. Findings are clues to investigate—not proof that a file is infected.</p><a class="text-link" href="PACEFUL-SHIELD-0.4.0-BETA-NOTES.md" data-i18n="releaseNotes">Read the 0.4 beta notes →</a></div>
+        <div class="steps-card">
+          <div class="step"><span>01</span><div><h3 data-i18n="step1Title">Choose watched folders</h3><p data-i18n="step1Text">Downloads, Desktop, Documents, and folders you add.</p></div></div>
+          <div class="step"><span>02</span><div><h3 data-i18n="step2Title">Review new findings</h3><p data-i18n="step2Text">Read the reason and check with Microsoft Defender.</p></div></div>
+          <div class="step"><span>03</span><div><h3 data-i18n="step3Title">You stay in control</h3><p data-i18n="step3Text">Nothing is automatically deleted or quarantined.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="notice-section section-shell">
+      <div class="notice-icon">!</div><div><h3 data-i18n="noticeTitle">Important beta security note</h3><p data-i18n="noticeText">Paceful Shield 0.4 is experimental. It is not a full antivirus, cannot guarantee detection, does not block individual files at OS level in this beta, and cannot guarantee it will survive termination by an administrator. Keep Microsoft Defender enabled.</p></div>
+    </section>
+
+    <section id="download" class="download-section section-shell">
+      <div class="download-panel">
+        <img src="assets/paceful-shield.png" alt="" class="download-logo">
+        <p class="eyebrow" data-i18n="downloadKicker">PACEFUL SHIELD · 0.4 BETA</p>
+        <h2 data-i18n="downloadTitle">Ready to review your PC security?</h2>
+        <p data-i18n="downloadText">Windows x64 installer. Please test beta software carefully and keep Microsoft Defender enabled.</p>
+        <a id="download-button" class="button button-primary download-button disabled" href="#download" aria-disabled="true" data-i18n="downloadLoading">Checking official release…</a>
+        <p id="download-status" class="download-status" role="status" data-i18n="downloadStatus">The button activates only when the 0.4 installer is available in the official GitHub release.</p>
+        <div class="download-links"><a href="https://github.com/pacefulguy1-hash/pace-shield" target="_blank" rel="noreferrer" data-i18n="githubLink">GitHub repository ↗</a><a href="PACEFUL-SHIELD-0.4.0-BETA-NOTES.md" data-i18n="notesLink">Release notes</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer section-shell"><a class="footer-brand" href="#top">Paceful Shield</a><span data-i18n="footerText">Windows security companion · Beta software · Keep Defender enabled</span><span>© <span id="year"></span> Paceful Shield Project</span></footer>
+</body>
+</html>

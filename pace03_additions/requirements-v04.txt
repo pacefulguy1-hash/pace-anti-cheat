@@ -1,0 +1,9 @@
+customtkinter
+darkdetect
+watchdog
+pystray
+pillow
+winotify
+Send2Trash
+psutil
+pyinstaller
